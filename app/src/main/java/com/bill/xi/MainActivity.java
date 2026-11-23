@@ -1,5 +1,26 @@
 package com.bill.xi;
+package com.bill.xi;
 
+import android.content.Context;
+import android.media.MediaScannerConnection;
+import android.os.Environment;
+
+public class MediaScanner {
+
+    public static void scan(Context context) {
+
+        String[] paths = {
+                Environment.getExternalStorageDirectory().getAbsolutePath()
+        };
+
+        MediaScannerConnection.scanFile(
+                context,
+                paths,
+                null,
+                null
+        );
+    }
+}
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
